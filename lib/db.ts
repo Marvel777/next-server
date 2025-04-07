@@ -1,3 +1,5 @@
+// for connecting in database
+
 import mongoose from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI
@@ -21,9 +23,9 @@ const connect = async () => {
             bufferCommands: true,
         });
         console.log("connected")
-    } catch (err: any) {
+    } catch (err) {
         console.log("Error: ", err)
-        throw new Error(err)
+        throw new Error(err as string);
     }
 }
 
